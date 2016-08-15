@@ -1,0 +1,33 @@
+{
+  "name": "read-github-issues",
+  "version": "1.0.0",
+  "description": "This module will automatically open already submitted issues on any repos in Github.",
+  "main": "cli.js",
+  "bin": {
+    "issues:": "cli.js"
+e },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedhayibor/read-github-issues.git"
+  },
+  "keywords": [
+    "issues",
+    "github",
+    "read"
+  ],
+  "author": "Mohamed Hayibor <mohamedhayibor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mohamedhayibor/read-github-issues/issues"
+  },
+  "homepage": "https://github.com/mohamedhayibor/read-github-issues#readme",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "got": "^6.3.0",
+    "meow": "^3.7.0",
+    "open": "0.0.5"
+  }
+}
