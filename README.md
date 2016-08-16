@@ -1,6 +1,6 @@
 # read-github-issues ![](https://img.shields.io/badge/status-stable-green.svg)
 
-This module will automatically open already submitted issues on any repos in Github.
+This module will automatically open the freshest issues on any repos in Github.
 
 ## Installation
 ```sh
@@ -20,17 +20,13 @@ On your terminal:
 ```
 
 # Demo
-![](http://g.recordit.co/D8ITkomdnq.gif)
+![](http://g.recordit.co/c21Fg9t2XM.gif)
 
 #### Api
 
 No api to mess with. Enter the command and get instant results (most recent to oldest issue).
 
-> If you are on Chrome the newest to oldest issues will go from left to right.
-
-By default, all open issues will be opened if the number of tabs is not specified.
-
-> Please keep your browser open before running the command.
+> If you are on Chrome the newest to oldest issues will go from left to right. Please keep your browser open before running the command.
 
 ### Raison D'etre
 

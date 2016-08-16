@@ -17,9 +17,9 @@ const cli = meow(`
     }
 });
 
-// number of tabs
+// query is the array of strings passed in by the user
 let query = cli.input;
-console.log('query >', query);
+
 let nTabs = query.shift();
 nTabs = Number(nTabs);
 
@@ -31,6 +31,7 @@ if (nTabs < 1 || nTabs > 25) {
 	process.exit(1);
 }
 
+// repoPath defines the root path to the repository
 let repoPath = query.join(' ');
 
 let link = `https://github.com/${ repoPath }/issues`;
@@ -76,6 +77,7 @@ got(link)
 	Something went wrong:
 	1. Make sure you are connected to the internet.
 	2. Make sure your number of tabs is greater than 0 and less than 26
+	3. Make sure your query points to the correct github path
 
 	Error from sys:
 	* ${ err }
