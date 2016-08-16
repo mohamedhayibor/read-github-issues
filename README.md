@@ -13,9 +13,10 @@ This module will automatically open already submitted issues on any repos in Git
 
 On your terminal:
 ```sh
-  > issues {owner}/{repo_name}
-  // To specify the number
   > issues {owner}/{repo_name} {number}
+  // example
+  > issues 5 segmentio/nightmare
+  > issues 3 avajs/ava
 ```
 
 # Demo
@@ -25,7 +26,7 @@ On your terminal:
 
 No api to mess with. Enter the command and get instant results (most recent to oldest issue).
 
-> If you are on Chrome the newest to oldest commits will go from left to right.
+> If you are on Chrome the newest to oldest issues will go from left to right.
 
 By default, all open issues will be opened if the number of tabs is not specified.
 

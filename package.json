@@ -1,11 +1,11 @@
 {
   "name": "read-github-issues",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "This module will automatically open already submitted issues on any repos in Github.",
   "main": "cli.js",
   "bin": {
-    "issues:": "cli.js"
-e },
+    "issues": "cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
