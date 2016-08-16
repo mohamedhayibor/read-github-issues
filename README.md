@@ -14,7 +14,7 @@ This module will automatically open the freshest issues on any repos in Github.
 On your terminal:
 ```sh
   > issues {owner}/{repo_name} {number}
-  // example
+  // examples
   > issues 5 segmentio/nightmare
   > issues 3 avajs/ava
 ```

@@ -1,7 +1,7 @@
 {
   "name": "read-github-issues",
   "version": "0.0.0",
-  "description": "This module will automatically open already submitted issues on any repos in Github.",
+  "description": "This module will automatically open the freshest issues on any repos on Github.",
   "main": "cli.js",
   "bin": {
     "issues": "cli.js"
