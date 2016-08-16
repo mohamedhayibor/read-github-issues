@@ -6,7 +6,7 @@ const got = require('got');
 const cheerio = require('cheerio');
 
 const cli = meow(`
-	Usage: issues <n. of tabs> <owner/repo_name>
+  Usage: issues <n. of tabs> <owner/repo_name>
 
   Examples:
   > issues 5 segmentio/nightmare
