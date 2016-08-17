@@ -4,6 +4,10 @@ const meow = require('meow');
 const open = require('open');
 const got = require('got');
 const cheerio = require('cheerio');
+const Ora = require('ora');
+const isNumber = require('is-number');
+
+const spin = new Ora('Loading the newest issues...');
 
 const cli = meow(`
   Usage: issues <n. of tabs> <owner/repo_name>
@@ -24,9 +28,11 @@ let nTabs = query.shift();
 nTabs = Number(nTabs);
 
 // check nTabs
-if (nTabs < 1 || nTabs > 25) {
+if ( !isNumber(nTabs) ) {
   console.log(`
-  Your number of tabs might be either negative or too big.
+  The first argument should be a number. Preferably between 1 and 24.
+  Example:
+  issues 4 avajs/ava
   `);
   process.exit(1);
 }
@@ -36,6 +42,8 @@ let repoPath = query.join(' ');
 
 let link = `https://github.com/${ repoPath }/issues`;
 
+spin.start();
+
 got(link)
   .then(res => {
     let $ = cheerio.load( res.body );
@@ -43,8 +51,8 @@ got(link)
 
     /*
     * The easiest way to get the job done:
-    *  1. Collect the `issue_id`s
-    *  2. strip the issue number
+    *  1. Collect the `issue_id`s.
+    *  2. strip the issue numbers.
     */
 
     if (result.length < 1) {
@@ -66,10 +74,11 @@ got(link)
 
 
     // slice array to corresponding number of tabs then open up issue tabs
-    dataIds.slice(0, nTabs).forEach( id => {
+    dataIds.slice(0, nTabs).forEach( (id, index) => {
       if ( id ) {
         open(`https://github.com/${ repoPath }/issues/${ id }`);
       }
+      if (index == nTabs - 1) spin.succeed();
     });
 
   }).catch(err => {
